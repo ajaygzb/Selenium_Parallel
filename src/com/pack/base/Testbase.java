@@ -143,7 +143,7 @@ public class Testbase {
 			}
 	  
 		else if (browser.equalsIgnoreCase("cloud_Safari")) {
-			System.out.println("launching cloud browser");
+			System.out.println("launching cloud browser Safari");
 			String username = "ajaykumar64" ;
 			String accessKey = "trCg4wh81EyLz7Zne48n";
 			String server ="hub-cloud.browserstack.com/wd/hub" ;
@@ -160,7 +160,7 @@ public class Testbase {
 			}
 	  
 		else if (browser.equalsIgnoreCase("cloud_AndroidTab")) {
-			System.out.println("launching cloud browser");
+			System.out.println("launching cloud browser on Google Nexus 6 ");
 			String username = "ajaykumar64" ;
 			String accessKey = "trCg4wh81EyLz7Zne48n";
 			String server ="hub-cloud.browserstack.com/wd/hub" ;

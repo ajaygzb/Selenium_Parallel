@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel test suite">
+
+<listeners>
+<listener class-name="listeners.SuiteListener"/>
+</listeners>
+
+<!--  <test name="Cloud Test Android">
+        <parameter name="browser" value="cloud_AndroidTab"/>
+        <classes>
+            <class name="com.pack.testCases.LoginTest"/>
+        </classes>
+    </test> -->
+    
+     <test name="Cloud Test Safari">
+        <parameter name="browser" value="cloud_Safari"/>
+        <classes>
+            <class name="com.pack.testCases.LoginTest"/>
+        </classes>
+    </test>
+</suite>
