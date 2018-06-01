@@ -4,11 +4,17 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
@@ -21,6 +27,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.google.common.base.Throwables;
+import com.pack.base.Testbase;
 
 public class CommonUtils {
 	
@@ -147,6 +154,40 @@ public class CommonUtils {
 		    
 		    return webElement;
 		}
+	   
+		public static List<String> ReadExceldata(int SheetIndex) throws InterruptedException {
+			String str;
+			List<String> data = new ArrayList<String>();
+				try {
+					FileInputStream file = new FileInputStream(
+					new File(Testbase.ExcelPath+"//BMS.xlsx"));
+					XSSFWorkbook workbook = new XSSFWorkbook(file);
+					XSSFSheet sheet = workbook.getSheetAt(SheetIndex);
+					System.out.println("rows" + sheet.getLastRowNum());
+					// Find number of rows in excel file
+					int rowCount = sheet.getLastRowNum();  // Index from zero
+					System.out.println("Total rows" + rowCount);
+					System.out.println("Getting Patient data from Excel..");
+					// Create a loop over all the rows of excel file to read it
+					for (int i = 1; i <= rowCount; i++) {
+						Row row = sheet.getRow(i);
+						// Create a loop to print cell values in a row
+						for (int j = 0; j < row.getLastCellNum(); j++) {
+							DataFormatter formatter = new DataFormatter();
+							str = formatter.formatCellValue(sheet.getRow(i).getCell(j));
+							data.add(str);
+						}
+					}
+					for(String s:data)
+						System.out.println(s);
+					workbook.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				} 
+				
+				
+				return data;
+			}
 
 
 

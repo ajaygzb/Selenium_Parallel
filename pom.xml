@@ -38,7 +38,7 @@
                         <property>
                             <name>listener</name> 
                             <value>org.uncommons.reportng.HTMLReporter, org.uncommons.reportng.JUnitXMLReporter</value>
-                           <run>testng.xml</run>
+                         <!--   <run>XMLs/testng.xml</run> -->
                        
                        
                         </property>
@@ -195,10 +195,19 @@
     <artifactId>commons-io</artifactId>
     <version>2.6</version>
 </dependency>
+<dependency>
+    <groupId>com.browserstack</groupId>
+    <artifactId>browserstack-local-java</artifactId>
+    <version>0.1.0</version>
+</dependency>
+
+
+
+
  
   </dependencies> 
   <properties>
-  	<run>smoke.xml</run>
+  	<run>XMLs/testng.xml</run>
   	<BrowserName>${browser}</BrowserName>
   </properties>
 </project>

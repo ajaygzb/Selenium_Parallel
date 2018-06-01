@@ -1,0 +1,16 @@
+// local.conf.json
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "ajaykumar64",
+  "key": "trCg4wh81EyLz7Zne48n",
+
+  "capabilities": {
+    "browserstack.local": true
+  },
+
+  "environments": {
+    "chrome": {
+      "browser": "chrome"
+    }
+  }
+}

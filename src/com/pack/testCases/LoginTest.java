@@ -7,10 +7,7 @@ import com.google.common.base.Throwables;
 import com.pack.Utils.CommonUtils;
 import com.pack.base.Testbase;
 import com.pack.pageobjects.LoginPage;
-import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-
-import Reporting.Reporter;
 
 public class LoginTest extends Testbase {
 	CommonUtils CU = new CommonUtils();

@@ -1,22 +1,15 @@
 package Reporting;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 
 import com.pack.base.Testbase;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.relevantcodes.extentreports.model.ITest;
-
-import org.apache.commons.io.FileUtils;
 
 import interfaces.ITestReporter;
 
@@ -29,7 +22,7 @@ public class TestReporter extends Testbase implements ITestReporter{
 	private Map<Long, ExtentTest> testReporters = new ConcurrentHashMap<Long, ExtentTest>();
 	private ExtentReports reporter;
 	public TestReporter(ExtentReports reporter) {
-		reporter.loadConfig(new File("./config.xml"));
+		reporter.loadConfig(new File("./XMLs/config.xml"));
 		this.reporter = reporter;
 	}
 
