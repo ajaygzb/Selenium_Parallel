@@ -18,6 +18,7 @@ public class SuiteListener implements ISuiteListener {
 	public void onStart(ISuite arg0) {
 		// Start the report here
 		Reporter.createReporter(OUTPUT_FOLDER + "extent/HtmlReport.html",true);
+		
 	}
 
 }

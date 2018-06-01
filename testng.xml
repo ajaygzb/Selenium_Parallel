@@ -7,16 +7,16 @@
 <listener class-name="listeners.SuiteListener"/>
 </listeners>
 
- <test name="ChromeTest">
+  <test name="ChromeTest">
  <parameter name="browser" value="chrome" />
  <classes>
- <class name="TestModule.LoginTest" />
+ <class name="com.pack.testCases.LoginTest" />
  </classes>
  </test>
  
  
  
-  <test name="FirefoxTest">
+ <!-- <test name="FirefoxTest">
  <parameter name="browser" value="firefox" />
  <classes>
  <class name="TestModule.LoginTest" />
@@ -38,6 +38,6 @@
  <classes>
  <class name="TestModule.LoginTest" />
  </classes>
- </test>
-
+ </test> -->
+ 
 </suite>

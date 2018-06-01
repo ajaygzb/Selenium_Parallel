@@ -1,4 +1,4 @@
-package com.utils.commons;
+package com.pack.Utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -34,7 +34,7 @@ public class CommonUtils {
 
 		try {
 			fileinputstream = new FileInputStream(projectPath.getAbsolutePath()
-					+ "/src/Config/Config.properties");
+					+ "/src/com/pack/config/properties/Config.properties");
 			prop.load(fileinputstream);
 			value = prop.getProperty(strPropertyName);
 			fileinputstream.close();

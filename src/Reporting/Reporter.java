@@ -2,6 +2,8 @@ package Reporting;
 
 import java.util.Locale;
 
+import com.pack.Utils.CommonUtils;
+import com.pack.base.Testbase;
 import com.relevantcodes.extentreports.DisplayOrder;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.NetworkMode;
@@ -70,8 +72,13 @@ public class Reporter {
 	public static void closeReport()
 	{
 		if(reporter != null)
+			reporter.addSystemInfo("Build URL : ",CommonUtils.readPropertyValue("URL"));
+		    reporter.addSystemInfo("Build Version : ",Testbase.BuildVersion);
 			reporter.flush();
+		  
 	}
+	
+	
 	
 	// this code can be further simplified
 	public static ITestReporter getTestReporter()
